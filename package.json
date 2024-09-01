@@ -13,16 +13,21 @@
         "db:seed": "tsx seed.ts"
     },
     "dependencies": {
+        "bcrypt": "^5.1.1",
         "better-sqlite3": "^11.2.1",
         "drizzle-orm": "^0.33.0",
+        "jsonwebtoken": "^9.0.2",
         "next": "14.2.7",
         "react": "^18",
-        "react-dom": "^18"
+        "react-dom": "^18",
+        "zod": "^3.23.8"
     },
     "devDependencies": {
         "@testing-library/dom": "^10.4.0",
         "@testing-library/react": "^16.0.1",
+        "@types/bcrypt": "^5.0.2",
         "@types/better-sqlite3": "^7.6.11",
+        "@types/jsonwebtoken": "^9.0.6",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
