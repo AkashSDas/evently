@@ -10,5 +10,8 @@ export default defineConfig({
         alias: {
             "@": path.resolve(__dirname, "."),
         },
+        coverage: {
+            provider: "v8",
+        },
     },
 });
