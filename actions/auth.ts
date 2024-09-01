@@ -11,7 +11,7 @@ const signupSchema = z.object({
     password: z.string(),
 });
 
-export async function signup(prevState: unknown, data: FormData) {
+export async function signup(prevState: any, data: FormData) {
     const parsed = signupSchema.parse(Object.fromEntries(data));
 
     try {
