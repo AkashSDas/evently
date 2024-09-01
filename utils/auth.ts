@@ -1,6 +1,7 @@
 import "server-only";
 
 import bcrypt from "bcrypt";
+import { eq } from "drizzle-orm";
 import jwt from "jsonwebtoken";
 
 import { db } from "@/db";
@@ -20,6 +21,26 @@ export async function signupUser(payload: { email: string; password: string }) {
 
     const user = rows[0];
     const token = createTokenForUser(user.id);
+
+    return { token, user };
+}
+
+export async function loginUser(payload: { email: string; password: string }) {
+    const foundUser = await db.query.users.findFirst({
+        where: eq(users.email, payload.email),
+    });
+
+    if (!foundUser) throw new Error("Invalid user");
+
+    const isPasswordCorrect = await bcrypt.compare(
+        payload.password,
+        foundUser.password
+    );
+    if (!isPasswordCorrect) throw new Error("Invalid user");
+
+    const token = createTokenForUser(foundUser.id);
+    const user = { ...foundUser, password: undefined };
+    delete user.password;
 
     return { token, user };
 }

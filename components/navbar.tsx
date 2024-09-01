@@ -8,7 +8,9 @@ export function Navbar() {
             <span className="font-bold">Evently.</span>
 
             <div className="flex items-center gap-4">
-                <Button variant="outline">Login</Button>
+                <Link href="/login">
+                    <Button variant="outline">Login</Button>
+                </Link>
 
                 <Link href="/signup">
                     <Button>Signup</Button>
