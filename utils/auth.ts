@@ -7,6 +7,29 @@ import jwt from "jsonwebtoken";
 import { db } from "@/db";
 import { users } from "@/db/schema";
 
+export async function getUserFromAccessToken(token: {
+    name: string;
+    value: string;
+}) {
+    const payload = jwt.verify(
+        token.value,
+        process.env.JWT_SECRET_KEY as string
+    ) as {
+        id: string;
+    };
+
+    const user = await db.query.users.findFirst({
+        where: eq(users.id, payload.id),
+        columns: {
+            id: true,
+            email: true,
+            createdAt: true,
+        },
+    });
+
+    return user;
+}
+
 export async function signupUser(payload: { email: string; password: string }) {
     const hashedPassword = await bcrypt.hash(payload.password, 10);
 
