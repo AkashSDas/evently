@@ -1,7 +1,18 @@
-export default function DashboardPage() {
+import { getAttendeesCountForDashboard } from "@/utils/attendees";
+import { getCurrentUser } from "@/utils/users";
+
+export default async function DashboardPage() {
+    const user = await getCurrentUser();
+    const count = await getAttendeesCountForDashboard(user.id);
+
     return (
-        <main>
-            <h1>Dashboard</h1>
-        </main>
+        <div className="w-full flex h-full justify-center items-center">
+            <div>
+                <h4 className="text-lg">Attendees</h4>
+                <h2 className="text-6xl font-semibold my-8 text-center">
+                    {count}
+                </h2>
+            </div>
+        </div>
     );
 }
