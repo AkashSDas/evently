@@ -23,9 +23,9 @@ export const events = sqliteTable(
         description: text("description"),
 
         streetNumber: integer("street_number"),
-        street: integer("street"),
+        street: text("street"),
         zip: integer("zip"),
-        bldg: integer("bldg"),
+        bldg: text("bldg"),
 
         isPrivate: boolean("is_private").default(false).notNull(),
         status: text("status", {
