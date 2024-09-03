@@ -8,6 +8,8 @@ export default async function RsvpsPage() {
     const user = await getCurrentUser();
     const data = await getRsvpsForDashboard(user.id);
 
+    // throw new Error("Not implemented"); // show error boundary
+
     return (
         <section className="p-2">
             <h2 className="font-bold text-xl">RSVPs</h2>
