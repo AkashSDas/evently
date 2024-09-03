@@ -13,7 +13,7 @@ export default async function EventsPage() {
             <h2 className="font-bold text-xl mb-3">Latest Events</h2>
 
             <div className="flex flex-col gap-2">
-                {events.map((event) => {
+                {events.map((event: any) => {
                     return (
                         <div
                             key={event.id}

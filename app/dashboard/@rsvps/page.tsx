@@ -13,7 +13,7 @@ export default async function RsvpsPage() {
             <h2 className="font-bold text-xl">RSVPs</h2>
 
             <div className="flex flex-col gap-2">
-                {data.map(function ({ attendees, events, rsvps }) {
+                {data.map(function ({ attendees, events, rsvps }: any) {
                     return (
                         <div
                             key={rsvps?.id}

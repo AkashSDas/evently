@@ -41,6 +41,9 @@ dependencies:
   next-themes:
     specifier: ^0.3.0
     version: 0.3.0(react-dom@18.3.1)(react@18.3.1)
+  nextjs-better-unstable-cache:
+    specifier: ^1.1.0
+    version: 1.1.0(next@14.2.7)(react@18.3.1)
   react:
     specifier: ^18
     version: 18.3.1
@@ -2268,7 +2271,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-    dev: true
 
   /check-error@2.1.1:
     resolution: {integrity: sha512-OAlb+T7V4Op9OwdkjmguYRqncdlx5JiofwOAUkmTF+jNdHwzTaTs4sRAGpzLF3oOz5xAyDGrPgeIDFQmDOTiJw==}
@@ -3578,7 +3580,6 @@ packages:
   /has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
-    dev: true
 
   /has-property-descriptors@1.0.2:
     resolution: {integrity: sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg==}
@@ -4397,6 +4398,17 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+    dev: false
+
+  /nextjs-better-unstable-cache@1.1.0(next@14.2.7)(react@18.3.1):
+    resolution: {integrity: sha512-IkN7f5a9oMq135gIkjQs3OnWcrmo35R6nj/AgiFzxQhOJmX9ev0aJg8zbJecdtMp0LZlGZf20upL+muq75tIxg==}
+    peerDependencies:
+      next: '>=13.4'
+      react: '>=18.2.0'
+    dependencies:
+      chalk: 4.1.2
+      next: 14.2.7(@babel/core@7.25.2)(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
     dev: false
 
   /node-abi@3.67.0:
@@ -5266,7 +5278,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
-    dev: true
 
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
