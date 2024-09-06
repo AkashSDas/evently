@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "./ui/button";
+import { CreateEventButton } from "./create-event-button";
 
 export function Navbar() {
     return (
@@ -8,6 +9,8 @@ export function Navbar() {
             <span className="font-bold">Evently.</span>
 
             <div className="flex items-center gap-4">
+                <CreateEventButton />
+
                 <Link href="/login">
                     <Button variant="outline">Login</Button>
                 </Link>
