@@ -1,7 +1,7 @@
-export default function DashboardLoader() {
+export default function Loader() {
     return (
         <div className="w-full h-full flex justify-center items-center italic my-6">
-            Loading...
+            Loading Event...
         </div>
     );
 }

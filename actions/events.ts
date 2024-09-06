@@ -19,4 +19,5 @@ export async function createNewEvent() {
     });
 
     revalidateTag("dashboard:events");
+    revalidateTag("events");
 }

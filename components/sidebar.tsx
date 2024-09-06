@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const links = [
     { route: "/dashboard", name: "Home" },
@@ -29,7 +30,11 @@ export function Sidebar() {
             <div>
                 {links.map((link) => {
                     return (
-                        <div key={link.route} className="w-full">
+                        <Link
+                            key={link.route}
+                            href={link.route}
+                            className="w-full"
+                        >
                             <div
                                 className={cn(
                                     "w-full h-full py-2 px-2 hover:bg-stone-800 active:bg-stone-700 rounded-lg cursor-pointer ",
@@ -40,7 +45,7 @@ export function Sidebar() {
                             >
                                 {link.name}
                             </div>
-                        </div>
+                        </Link>
                     );
                 })}
             </div>
